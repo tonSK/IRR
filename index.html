@@ -18,13 +18,13 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 pb-10 min-h-screen">
+<body class="bg-white text-gray-800 pb-10 min-h-screen">
 
     <!-- Header -->
-    <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+    <header class="bg-[#047dc2] text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[#273482]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                 IRR CALCULATOR
             </h1>
             <div class="flex items-center gap-3">
@@ -47,51 +47,51 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- 1. ข้อมูลพื้นฐาน -->
-                    <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
-                        <h2 class="text-xl font-bold text-blue-900 mb-6 flex items-center gap-3">
-                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-700 rounded-full text-sm">1</span>
+                    <div class="bg-[#f4f8fa] p-6 rounded-3xl shadow-lg border border-gray-100">
+                        <h2 class="text-xl font-bold text-[#273482] mb-6 flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-[#273482] rounded-full text-sm">1</span>
                             ข้อมูลกรมธรรม์พื้นฐาน
                         </h2>
                         <div class="space-y-5">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-600 mb-1.5">ระยะเวลาคุ้มครอง (ปี)</label>
-                                    <input type="number" id="totalYears" value="" placeholder="0" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-blue-200 outline-none text-center text-lg font-semibold">
+                                    <input type="number" id="totalYears" value="" placeholder="0" class="bg-white w-full border border-gray-200 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-blue-200 outline-none text-center text-lg font-semibold">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-600 mb-1.5">ระยะเวลาชำระเบี้ย (ปี)</label>
-                                    <input type="number" id="payYears" value="" placeholder="0" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-blue-200 outline-none text-center text-lg font-semibold">
+                                    <input type="number" id="payYears" value="" placeholder="0" class="bg-white w-full border border-gray-200 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-blue-200 outline-none text-center text-lg font-semibold">
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-600 mb-1.5">ทุนประกัน (บาท)</label>
-                                <input type="text" id="sumInsured" value="" placeholder="0" oninput="formatInputNumber(this)" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 outline-none text-lg font-semibold text-right">
+                                <input type="text" id="sumInsured" value="" placeholder="0" oninput="formatInputNumber(this)" class="bg-white w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 outline-none text-lg font-semibold text-right">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-600 mb-1.5">เบี้ยต่อปี (บาท)</label>
-                                <input type="text" id="annualPremium" value="" placeholder="0" oninput="formatInputNumber(this)" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 outline-none text-lg font-semibold text-right">
+                                <input type="text" id="annualPremium" value="" placeholder="0" oninput="formatInputNumber(this)" class="bg-white w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 outline-none text-lg font-semibold text-right">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-600 mb-1.5">เงินครบสัญญา (บาท)</label>
-                                <input type="text" id="maturityBenefit" value="" placeholder="0" oninput="formatInputNumber(this)" class="w-full border border-blue-300 bg-blue-50 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 outline-none text-lg font-bold text-right text-blue-800">
+                                <input type="text" id="maturityBenefit" value="" placeholder="0" oninput="formatInputNumber(this)" class="bg-white w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 outline-none text-lg font-semibold text-right">
                             </div>
                         </div>
                     </div>
 
                     <!-- 2. สิทธิประโยชน์ทางภาษี -->
-                    <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 space-y-6">
-                        <h2 class="text-xl font-bold text-blue-900 flex items-center gap-3">
-                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-700 rounded-full text-sm">2</span>
+                    <div class="bg-[#f4f8fa] p-6 rounded-3xl shadow-lg border border-gray-100 space-y-6">
+                        <h2 class="text-xl font-bold text-[#273482] flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-[#273482] rounded-full text-sm">2</span>
                             สิทธิประโยชน์ทางภาษี
                         </h2>
 
                         <!-- เลือกประเภทประกัน -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">ประเภทประกันสำหรับการลดหย่อน</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ประกันสำหรับการลดหย่อน</label>
                             <div class="grid grid-cols-3 gap-2">
-                                <button type="button" onclick="selectInsType('life', this)" class="ins-type-btn py-2.5 px-2 border border-blue-600 bg-blue-600 text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm text-center">ประกันชีวิต</button>
-                                <button type="button" onclick="selectInsType('pension', this)" class="ins-type-btn py-2.5 px-2 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer text-center">ประกันบำนาญ</button>
-                                <button type="button" onclick="selectInsType('both', this)" class="ins-type-btn py-2.5 px-2 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer text-center">ชีวิต + บำนาญ</button>
+                                <button type="button" onclick="selectInsType('life', this)" class="ins-type-btn py-2.5 px-2 border border-[#047dc2] bg-[#047dc2] text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm text-center">ประกันชีวิต</button>
+                                <button type="button" onclick="selectInsType('pension', this)" class="ins-type-btn py-2.5 px-2 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer text-center">ประกันบำนาญ</button>
+                                <button type="button" onclick="selectInsType('both', this)" class="ins-type-btn py-2.5 px-2 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer text-center">ชีวิต + บำนาญ</button>
                             </div>
                             <input type="hidden" id="selectedInsType" value="life">
                         </div>
@@ -100,14 +100,14 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">ฐานภาษีที่ใช้ในการคำนวณ</label>
                             <div class="grid grid-cols-4 gap-2">
-                                <button type="button" onclick="selectTax(0, this)" class="tax-btn py-2.5 border border-blue-600 bg-blue-600 text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm">0%</button>
-                                <button type="button" onclick="selectTax(5, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">5%</button>
-                                <button type="button" onclick="selectTax(10, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">10%</button>
-                                <button type="button" onclick="selectTax(15, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">15%</button>
-                                <button type="button" onclick="selectTax(20, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">20%</button>
-                                <button type="button" onclick="selectTax(25, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">25%</button>
-                                <button type="button" onclick="selectTax(30, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">30%</button>
-                                <button type="button" onclick="selectTax(35, this)" class="tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">35%</button>
+                                <button type="button" onclick="selectTax(0, this)" class="tax-btn py-2.5 border border-[#047dc2] bg-[#047dc2] text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm">0%</button>
+                                <button type="button" onclick="selectTax(5, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">5%</button>
+                                <button type="button" onclick="selectTax(10, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">10%</button>
+                                <button type="button" onclick="selectTax(15, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">15%</button>
+                                <button type="button" onclick="selectTax(20, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">20%</button>
+                                <button type="button" onclick="selectTax(25, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">25%</button>
+                                <button type="button" onclick="selectTax(30, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">30%</button>
+                                <button type="button" onclick="selectTax(35, this)" class="tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer">35%</button>
                             </div>
                             <input type="hidden" id="selectedTaxRate" value="0">
                         </div>
@@ -119,13 +119,13 @@
                 </div>
 
                 <!-- 3. เงินคืนระหว่างสัญญา -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
+                <div class="bg-[#f4f8fa] p-6 rounded-3xl shadow-lg border border-gray-100">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-xl font-bold text-blue-900 flex items-center gap-3">
-                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-700 rounded-full text-sm">3</span>
+                        <h2 class="text-xl font-bold text-[#273482] flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-[#273482] rounded-full text-sm">3</span>
                             เงินคืนระหว่างสัญญา
                         </h2>
-                        <button onclick="addCashbackRow()" class="flex items-center gap-1.5 text-sm bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-medium cursor-pointer transition shadow-sm">
+                        <button onclick="addCashbackRow()" class="flex items-center gap-1.5 text-sm bg-[#047dc2] hover:bg-[#03659e] text-white px-5 py-2.5 rounded-xl font-medium cursor-pointer transition shadow-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
                             เพิ่มเงื่อนไขเงินคืน
                         </button>
@@ -134,13 +134,13 @@
                 </div>
 
                 <!-- 4. เงินปันผลระหว่างสัญญา -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
+                <div class="bg-[#f4f8fa] p-6 rounded-3xl shadow-lg border border-gray-100">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-xl font-bold text-blue-900 flex items-center gap-3">
-                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-700 rounded-full text-sm">4</span>
+                        <h2 class="text-xl font-bold text-[#273482] flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-[#273482] rounded-full text-sm">4</span>
                             เงินปันผลระหว่างสัญญา
                         </h2>
-                        <button onclick="addDividendRow()" class="flex items-center gap-1.5 text-sm bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-medium cursor-pointer transition shadow-sm">
+                        <button onclick="addDividendRow()" class="flex items-center gap-1.5 text-sm bg-[#047dc2] hover:bg-[#03659e] text-white px-5 py-2.5 rounded-xl font-medium cursor-pointer transition shadow-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
                             เพิ่มเงินปันผล
                         </button>
@@ -153,32 +153,32 @@
             <!-- ฝั่ง Output (ขวา 1 ส่วน) -->
             <div class="xl:col-span-1 space-y-8">
                 <!-- ผลลัพธ์หลัก -->
-                <div class="bg-gradient-to-br from-blue-900 to-blue-800 text-white p-8 rounded-3xl shadow-2xl border border-blue-700 sticky top-28 space-y-6">
+                <div class="bg-gradient-to-br from-[#047dc2] to-[#047dc2] text-white p-8 rounded-3xl shadow-2xl border border-[#047dc2] sticky top-28 space-y-6">
                     <div>
-                        <p class="text-teal-300 uppercase text-xs font-bold tracking-widest mb-2">ผลลัพธ์การคำนวณ</p>
-                        <h3 class="text-xl font-medium text-gray-200 mb-1">อัตราผลตอบแทนภายใน (IRR)</h3>
+                        <p class="text-[#ffffff] uppercase text-xs font-bold tracking-widest mb-2">ผลลัพธ์การคำนวณ</p>
+                        <h3 class="text-xl font-medium text-[#273482] mb-1">อัตราผลตอบแทน IRR</h3>
                         <div class="flex items-end gap-1 my-3">
-                            <span id="irrWithTax" class="text-7xl font-extrabold text-teal-300 leading-none tracking-tight">--</span>
-                            <span class="text-4xl font-bold text-teal-300 pb-1">%</span>
+                            <span id="irrWithTax" class="text-7xl font-extrabold text-[#ffffff] leading-none tracking-tight">--</span>
+                            <span class="text-4xl font-bold text-[#ffffff] pb-1">%</span>
                         </div>
-                        <p id="equivalentBankInterest" class="text-lg text-blue-100 font-light border-t border-blue-700 pt-4 mt-4">เทียบเท่าดอกเบี้ยธนาคาร: <span class="font-semibold text-white">-- %</span></p>
+                        <p id="equivalentBankInterest" class="text-lg text-[#273482] font-light border-t border-[#273482] pt-4 mt-4">เทียบเท่าดอกเบี้ยธนาคาร : <span class="font-semibold text-[#273482]">--%</span></p>
                     </div>
                     
-                    <div class="border-t border-blue-700 pt-6 grid grid-cols-2 gap-4 text-center">
-                        <div class="bg-blue-950/50 p-3 rounded-xl">
-                            <span class="text-xs text-gray-300 block">เบี้ยจ่ายสะสม</span>
-                            <span id="totalPaidText" class="text-sm font-bold text-red-400">0 ฿</span>
+                    <div class="border-t border-[#273482] pt-6 grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-[#273482] p-3 rounded-xl">
+                            <span class="text-sm text-[#047dc2] block">เบี้ยจ่ายสะสม</span>
+                            <span id="totalPaidText" class="text-sm font-bold text-red-500">0 ฿</span>
                         </div>
-                        <div class="bg-blue-950/50 p-3 rounded-xl">
-                            <span class="text-xs text-gray-300 block">ผลประโยชน์รับรวม</span>
-                            <span id="totalReceivedText" class="text-sm font-bold text-teal-300">0 ฿</span>
+                        <div class="bg-[#273482] p-3 rounded-xl">
+                            <span class="text-sm text-[#047dc2] block">ผลประโยชน์รับรวม</span>
+                            <span id="totalReceivedText" class="text-sm font-bold text-[#ffffff]">0 ฿</span>
                         </div>
                     </div>
 
                     <!-- กรอบ: ผลประโยชน์มากกว่าเบี้ยจ่ายสะสม -->
-                    <div class="bg-blue-950/70 p-4 rounded-2xl border border-blue-600 text-center">
-                        <span class="text-xs text-gray-300 block mb-1">ผลประโยชน์มากกว่าเบี้ยจ่ายสะสม</span>
-                        <span id="netProfitText" class="text-xl font-bold text-teal-300">0 ฿</span>
+                    <div class="bg-[#273482] p-4 rounded-2xl border border-[#047dc2] text-center">
+                        <span class="text-sm text-[#047dc2] block mb-1">ผลประโยชน์มากกว่าเบี้ยจ่ายสะสม</span>
+                        <span id="netProfitText" class="text-xl font-bold text-[#ffffff]">0 ฿</span>
                     </div>
                 </div>
             </div>
@@ -186,14 +186,14 @@
         </div>
 
         <!-- ปุ่มคำนวณ -->
-        <button onclick="calculateIRR()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-5 rounded-2xl text-xl shadow-xl transition duration-200 cursor-pointer flex items-center justify-center gap-2">
+        <button onclick="calculateIRR()" class="w-full bg-[#273482] hover:bg-[#1a2569] text-white font-bold py-5 rounded-2xl text-xl shadow-xl transition duration-200 cursor-pointer flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
             คำนวณ
         </button>
 
         <!-- ตารางกระแสเงินสดรายปี -->
         <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
-            <h3 class="font-bold text-xl text-blue-900 mb-4">ตารางกระแสเงินสดรายปี</h3>
+            <h3 class="font-bold text-xl text-[#273482] mb-4">ตารางกระแสเงินสดรายปี</h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-center whitespace-nowrap">
                     <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
@@ -233,9 +233,9 @@
         function selectInsType(type, btn) {
             document.getElementById('selectedInsType').value = type;
             document.querySelectorAll('.ins-type-btn').forEach(b => {
-                b.className = "ins-type-btn py-2.5 px-2 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer text-center";
+                b.className = "ins-type-btn py-2.5 px-2 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer text-center";
             });
-            btn.className = "ins-type-btn py-2.5 px-2 border border-blue-600 bg-blue-600 text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm text-center";
+            btn.className = "ins-type-btn py-2.5 px-2 border border-[#047dc2] bg-[#047dc2] text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm text-center";
 
             let descText = "";
             if (type === 'life') {
@@ -251,9 +251,9 @@
         function selectTax(rate, btn) {
             document.getElementById('selectedTaxRate').value = rate;
             document.querySelectorAll('.tax-btn').forEach(b => {
-                b.className = "tax-btn py-2.5 border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer";
+                b.className = "tax-btn py-2.5 border border-gray-200 bg-white rounded-xl text-xs sm:text-sm font-semibold hover:border-blue-500 transition cursor-pointer";
             });
-            btn.className = "tax-btn py-2.5 border border-blue-600 bg-blue-600 text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm";
+            btn.className = "tax-btn py-2.5 border border-[#047dc2] bg-[#047dc2] text-white rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer shadow-sm";
         }
 
         function addCashbackRow() {
@@ -424,7 +424,7 @@
             let netProfit = totalReceived - totalPaid;
 
             document.getElementById('irrWithTax').innerText = irrVal.toFixed(2);
-            document.getElementById('equivalentBankInterest').innerHTML = `เทียบเท่าดอกเบี้ยธนาคาร: <span class="font-semibold text-white">${equivalentBankVal.toFixed(2)} %</span>`;
+            document.getElementById('equivalentBankInterest').innerHTML = `เทียบเท่าดอกเบี้ยธนาคาร: <span class="font-semibold text-[#273482]">${equivalentBankVal.toFixed(2)} %</span>`;
             document.getElementById('totalPaidText').innerText = totalPaid.toLocaleString() + ' ฿';
             document.getElementById('totalReceivedText').innerText = totalReceived.toLocaleString() + ' ฿';
             document.getElementById('netProfitText').innerText = netProfit.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ฿';
@@ -437,7 +437,7 @@
             let tbody = document.getElementById('resultTable');
             tbody.innerHTML = '';
             tableData.forEach(row => {
-                let netColor = row.net < 0 ? 'text-red-500 font-semibold' : 'text-teal-600 font-semibold';
+                let netColor = row.net < 0 ? 'text-red-500 font-semibold' : 'text-[#047dc2] font-semibold';
                 
                 let divCell = hasAnyDividend ? `<td class="p-3 text-right text-gray-600">${row.dividend > 0 ? row.dividend.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ฿' : '-'}</td>` : '';
                 let taxCell = hasAnyTaxSaving ? `<td class="p-3 text-right text-blue-600">${row.taxSaving > 0 ? '+' + row.taxSaving.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ฿' : '-'}</td>` : '';
