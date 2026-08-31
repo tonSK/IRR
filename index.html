@@ -166,19 +166,19 @@
                     
                     <div class="border-t border-[#273482] pt-6 grid grid-cols-2 gap-4 text-center">
                         <div class="bg-[#273482] p-3 rounded-xl">
-                            <span class="text-sm text-[#047dc2] block">เบี้ยจ่ายสะสม</span>
-                            <span id="totalPaidText" class="text-sm font-bold text-yellow-300">0 ฿</span>
+                            <span class="text-sm text-blue-400 block">เบี้ยจ่ายสะสม</span>
+                            <span id="totalPaidText" class="text-sm font-bold text-yellow-300">0</span>
                         </div>
                         <div class="bg-[#273482] p-3 rounded-xl">
-                            <span class="text-sm text-[#047dc2] block">ผลประโยชน์รับรวม</span>
-                            <span id="totalReceivedText" class="text-sm font-bold text-[#ffffff]">0 ฿</span>
+                            <span class="text-sm text-blue-400 block">ผลประโยชน์รับรวม</span>
+                            <span id="totalReceivedText" class="text-sm font-bold text-[#ffffff]">0</span>
                         </div>
                     </div>
 
                     <!-- กรอบ: ผลประโยชน์มากกว่าเบี้ยจ่ายสะสม -->
                     <div class="bg-[#273482] p-4 rounded-2xl border border-[#047dc2] text-center">
-                        <span class="text-sm text-[#047dc2] block mb-1">ผลประโยชน์มากกว่าเบี้ยจ่ายสะสม</span>
-                        <span id="netProfitText" class="text-xl font-bold text-[#ffffff]">0 ฿</span>
+                        <span class="text-sm text-blue-400 block mb-1">ผลประโยชน์มากกว่าเบี้ยจ่ายสะสม</span>
+                        <span id="netProfitText" class="text-xl font-bold text-[#ffffff]">0</span>
                     </div>
                 </div>
             </div>
@@ -407,10 +407,10 @@
             let netProfit = totalReceived - totalPaid;
 
             document.getElementById('irrWithTax').innerText = irrVal.toFixed(2);
-            document.getElementById('equivalentBankInterest').innerHTML = `เทียบเท่าดอกเบี้ยธนาคาร: <span class="font-semibold text-[#273482]">${equivalentBankVal.toFixed(2)} %</span>`;
-            document.getElementById('totalPaidText').innerText = totalPaid.toLocaleString() + ' ฿';
-            document.getElementById('totalReceivedText').innerText = totalReceived.toLocaleString() + ' ฿';
-            document.getElementById('netProfitText').innerText = netProfit.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ฿';
+            document.getElementById('equivalentBankInterest').innerHTML = `เทียบเท่าดอกเบี้ยธนาคาร: <span class="font-semibold text-yellow-300">${equivalentBankVal.toFixed(2)}%</span>`;
+            document.getElementById('totalPaidText').innerText = totalPaid.toLocaleString();
+            document.getElementById('totalReceivedText').innerText = totalReceived.toLocaleString();
+            document.getElementById('netProfitText').innerText = netProfit.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
             let thDiv = document.getElementById('thDividend');
             let thTax = document.getElementById('thTax');
