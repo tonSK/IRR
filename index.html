@@ -161,7 +161,7 @@
                             <span id="irrWithTax" class="text-7xl font-extrabold text-[#ffffff] leading-none tracking-tight">--</span>
                             <span class="text-4xl font-bold text-[#ffffff] pb-1">%</span>
                         </div>
-                        <p id="equivalentBankInterest" class="text-lg text-[#273482] font-light border-t border-[#273482] pt-4 mt-4">เทียบเท่าดอกเบี้ยธนาคาร : <span class="font-semibold text-[#273482]">--%</span></p>
+                        <p id="equivalentBankInterest" class="text-2xl text-red-500 font-light border-t border-[#273482] pt-4 mt-4">เทียบเท่าดอกเบี้ยธนาคาร : <span class="font-semibold text-red-500">--%</span></p>
                     </div>
                     
                     <div class="border-t border-[#273482] pt-6 grid grid-cols-2 gap-4 text-center">
@@ -329,50 +329,33 @@
             let totalPaid = 0;
             let totalReceived = 0;
             let hasAnyDividend = false;
-            let hasAnyTaxSaving = false;
+            let hasAnyTaxSaving = (payYears > 0 && taxRate > 0 && annualPremium > 0);
 
-            // --- คำนวณปีที่ 0 ---
-            let paidYear0 = annualPremium;
-            let taxSavingYear0 = 0;
-            if (payYears >= 1 && annualPremium > 0) {
-                totalPaid += annualPremium;
-                let deductible = 0;
+            let deductible = 0;
+            if (annualPremium > 0) {
                 if (insType === 'life') deductible = Math.min(annualPremium, 100000);
                 else if (insType === 'pension') deductible = Math.min(annualPremium, 200000);
                 else if (insType === 'both') deductible = Math.min(annualPremium, 300000);
-                taxSavingYear0 = deductible * taxRate;
-                if (taxSavingYear0 > 0) hasAnyTaxSaving = true;
             }
-            let netYear0 = taxSavingYear0 - paidYear0;
-            cfArray[0] = netYear0;
-            totalReceived += taxSavingYear0;
+            let annualTaxSaving = deductible * taxRate;
 
-            tableData.push({
-                year: 0,
-                paid: paidYear0 > 0 ? -paidYear0 : 0,
-                cashback: 0,
-                dividend: 0,
-                taxSaving: taxSavingYear0,
-                net: netYear0
-            });
-
-            // --- วนลูปตั้งแต่ปีที่ 1 ถึง totalYears ---
-            for (let i = 1; i <= totalYears; i++) {
+            // --- วนลูปตั้งแต่ปีที่ 0 ถึง totalYears ---
+            for (let i = 0; i <= totalYears; i++) {
                 let paid = 0;
                 let cashback = 0;
                 let dividend = 0;
                 let taxSaving = 0;
 
-                if (i < payYears) {
+                // ชำระเบี้ยในปีที่ 0 ถึง payYears - 1
+                if (i < payYears && annualPremium > 0) {
                     paid = annualPremium;
                     totalPaid += annualPremium;
+                }
 
-                    let deductible = 0;
-                    if (insType === 'life') deductible = Math.min(annualPremium, 100000);
-                    else if (insType === 'pension') deductible = Math.min(annualPremium, 200000);
-                    else if (insType === 'both') deductible = Math.min(annualPremium, 300000);
-                    taxSaving = deductible * taxRate;
-                    if (taxSaving > 0) hasAnyTaxSaving = true;
+                // เงินคืนภาษี ได้รับในปีถัดไปของการชำระเบี้ย (ปีที่ 1 ถึง payYears)
+                if (i >= 1 && (i - 1) < payYears && annualTaxSaving > 0) {
+                    taxSaving = annualTaxSaving;
+                    totalReceived += taxSaving;
                 }
 
                 document.querySelectorAll('.cashback-row').forEach(row => {
@@ -404,7 +387,7 @@
                     cashback += maturity;
                 }
 
-                totalReceived += (cashback + dividend + taxSaving);
+                totalReceived += (cashback + dividend);
 
                 let net = cashback + dividend + taxSaving - paid;
                 cfArray[i] = net;
